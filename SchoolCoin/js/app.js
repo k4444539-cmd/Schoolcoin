@@ -1,19 +1,13 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const tg = window.Telegram?.WebApp;
-    const statusEl = document.getElementById("status");
-    const userEl = document.getElementById("user");
-    const sendBtn = document.getElementById("sendBtn");
+// Ініціалізація Telegram WebApp
+const tg = window.Telegram.WebApp;
 
-    if (tg) {
-        tg.ready();
-        statusEl.textContent = "Відкрито через Telegram ✅";
-        userEl.textContent = JSON.stringify(tg.initDataUnsafe.user, null, 2);
-        sendBtn.disabled = false;
+// Тестовий баланс (поки без бази даних)
+let balance = 100;
 
-        sendBtn.addEventListener("click", () => {
-            tg.sendData("Test data from Mini App");
-        });
-    } else {
-        statusEl.textContent = "Відкрито поза Telegram ❌";
-    }
+document.getElementById("check").addEventListener("click", () => {
+  document.getElementById("balance").innerText = balance + " 🪙";
+  tg.HapticFeedback.impactOccurred("light"); // легка вібрація (тільки в мобільному Telegram)
 });
+
+// Автоматичне встановлення балансу при відкритті
+document.getElementById("balance").innerText = balance + " 🪙";
