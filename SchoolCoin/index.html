@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="uk">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VillaCoins – Test Mini App</title>
+
+    <!-- Telegram Web App script -->
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <main class="wrap">
+        <h1>VillaCoins – тест</h1>
+
+        <div id="info" class="card">
+            <p><strong>Статус:</strong> <span id="status">Очікування відкриття з Telegram...</span></p>
+            <p><strong>Хористувач:</strong> <pre id="user"></pre></p>
+        </div>
+
+        <div class="card">
+            <button id="sendBtn" disabled>Надіслати тест-дані в бот</button>
+            <p class="note">При відкритті НЕ в Telegram – кнопка не працюватиме.</p>
+        </div>
+
+        <footer class="small">
+            Пробна сторінка – відкривати тільки з чата з ботом.
+        </footer>
+    </main>
+
+    <!-- JS -->
+    <script src="js/app.js"></script>
+</body>
+</html>
