@@ -1,36 +1,21 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="uk">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>VillaCoins – Test Mini App</title>
-
-    <!-- Telegram Web App script -->
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Шкільний міні-апп</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <main class="wrap">
-        <h1>VillaCoins – тест</h1>
+  <div class="container">
+    <h1>🎓 Вітаю у шкільному додатку!</h1>
+    <p>Твій баланс:</p>
+    <div id="balance">0 🪙</div>
+    <button id="check">Оновити баланс</button>
+  </div>
 
-        <div id="info" class="card">
-            <p><strong>Статус:</strong> <span id="status">Очікування відкриття з Telegram...</span></p>
-            <p><strong>Хористувач:</strong> <pre id="user"></pre></p>
-        </div>
-
-        <div class="card">
-            <button id="sendBtn" disabled>Надіслати тест-дані в бот</button>
-            <p class="note">При відкритті НЕ в Telegram – кнопка не працюватиме.</p>
-        </div>
-
-        <footer class="small">
-            Пробна сторінка – відкривати тільки з чата з ботом.
-        </footer>
-    </main>
-
-    <!-- JS -->
-    <script src="js/app.js"></script>
+  <!-- Telegram WebApp SDK -->
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
