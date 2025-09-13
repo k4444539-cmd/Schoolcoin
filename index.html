@@ -3,20 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Шкільний міні-апп</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>SchoolCoin</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>🎓 Вітаю у шкільному додатку!</h1>
-    <p>Твій баланс:</p>
-    <div id="balance">0 🪙</div>
-    <button id="check">Оновити баланс</button>
-  </div>
+  <!-- Верхня панель -->
+  <header class="header">
+    <div class="avatar">
+      <img src="img/avatar.png" alt="Avatar">
+    </div>
+    <div class="balance">
+      <img src="img/coin.png" alt="Coin" class="coin-icon">
+      <span id="balance">5</span> SC
+    </div>
+  </header>
 
-  <!-- Telegram WebApp SDK -->
-  <script src="https://k4444539-cmd.github.io/Schoolcoin/"></script>
-  <script src="app.js"></script>
+  <!-- Основний блок -->
+  <main class="content">
+    <h1>Топ 10 гравців</h1>
+    <ul class="leaderboard">
+      <li><span>1. Андрій</span> <span>150 SC</span></li>
+      <li><span>2. Оля</span> <span>120 SC</span></li>
+      <li><span>3. Макс</span> <span>110 SC</span></li>
+      <!-- решта учасників -->
+    </ul>
+  </main>
+
+  <!-- Нижня навігація -->
+  <footer class="footer">
+    <button class="home-btn">🏠 Home</button>
+    <button class="cases-btn">🎁 Кейс</button>
+  </footer>
 </body>
 </html>
-
