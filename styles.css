@@ -9,17 +9,80 @@ body {
   flex-direction: column;
 }
 
-/* ===== Header / main / leaderboard (зберігаємо твої стилі) ===== */
-/* (тут вставляй свої попередні правила для header, .leaderboard тощо) */
-/* ... (не змінюю, припускаю, що вони вже є) ... */
+/* ===== Верхня панель ===== */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: rgba(0, 0, 20, 0.8);
+  border-bottom: 1px solid rgba(0, 200, 255, 0.5);
+  box-shadow: 0 4px 20px rgba(0, 200, 255, 0.3);
+}
 
-/* ===== Нижня панель (універсальна, працює для <button> і <a>) ===== */
+.avatar img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #00d4ff;
+}
+
+.balance {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, #002233, #004466);
+  padding: 8px 14px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 200, 255, 0.6);
+  font-weight: bold;
+}
+
+.coin-icon {
+  width: 20px;
+  margin-right: 8px;
+}
+
+/* ===== Основний блок ===== */
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.leaderboard {
+  background: rgba(0, 15, 30, 0.85);
+  border-radius: 20px;
+  padding: 20px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 0 25px rgba(0, 200, 255, 0.4);
+  list-style: none;
+}
+
+.leaderboard li {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 15px;
+  background: rgba(0, 53, 102, 0.4);
+  border-radius: 12px;
+  margin-bottom: 10px;
+  transition: all 0.3s ease;
+}
+
+.leaderboard li:hover {
+  background: rgba(0, 200, 255, 0.3);
+  transform: scale(1.03);
+}
+
+/* ===== Нижня панель ===== */
 .footer-bar {
   position: fixed;
-  bottom: 20px;                     /* піднято від краю */
+  bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
-  width: calc(100% - 32px);         /* відступи з боків */
+  width: calc(100% - 32px);
   max-width: 420px;
   display: flex;
   gap: 10px;
@@ -28,14 +91,11 @@ body {
   padding: 10px;
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(0, 200, 255, 0.15);
-  z-index: 9999;                    /* щоб була поверх всього */
+  z-index: 9999;
   backdrop-filter: blur(6px);
 }
 
-/* Універсальний стиль для кнопки (підтримує <button> і <a.nav-btn>) */
-.footer-bar .nav-btn,
-.footer-bar button {
-  -webkit-appearance: none;
+.footer-bar .nav-btn {
   appearance: none;
   display: inline-flex;
   align-items: center;
@@ -44,7 +104,6 @@ body {
   padding: 10px 12px;
   background: linear-gradient(135deg, #003566, #00bfff);
   color: white;
-  text-decoration: none;
   border: none;
   border-radius: 10px;
   font-weight: 600;
@@ -54,31 +113,16 @@ body {
   box-shadow: 0 6px 18px rgba(0, 180, 255, 0.18);
 }
 
-/* Активна — сильніша підсвітка */
-.footer-bar .nav-btn.active,
-.footer-bar button.active {
+.footer-bar .nav-btn.active {
   background: linear-gradient(135deg, #00d4ff, #0088ff);
   color: #00121a;
   box-shadow: 0 10px 30px rgba(0, 212, 255, 0.35);
   transform: translateY(-4px);
 }
 
-/* Hover / фокус */
 .footer-bar .nav-btn:hover,
-.footer-bar button:hover,
-.footer-bar .nav-btn:focus,
-.footer-bar button:focus {
+.footer-bar .nav-btn:focus {
   transform: translateY(-2px);
   box-shadow: 0 8px 26px rgba(0, 200, 255, 0.28);
   outline: none;
-}
-
-/* Підстраховка: якщо елемент — <a> без класу, застосувати */
-.footer-bar a {
-  text-align: center;
-}
-
-/* Безпечна зона (для айфонів з вирізом) */
-@supports(padding: max(0px)) {
-  .footer-bar { padding-bottom: calc(10px + env(safe-area-inset-bottom)); }
 }
