@@ -17,7 +17,7 @@
       <span id="balance">5</span> SC
     </div>
   </header>
-
+  
   <!-- Основний блок -->
   <main class="content">
     <h1>Топ 10 гравців</h1>
@@ -28,14 +28,15 @@
     </ul>
   </main>
 
-  <!-- Нижня навігація -->
-  <footer class="footer">
-    <a href="cases.html" class="nav-btn">🎁 Кейси</a>
-    <a href="index.html" class="nav-btn active">🏠 Дім</a>
-    <a href="profile.html" class="nav-btn">👤 Профіль</a>
-  </footer>
+      <!-- Bottom Navigation -->
+  <div class="navbar">
+     <button class="active" onclick="showPage('home')">Home</button>
+     <button onclick="showPage('cases')">Cases</button>
+     <button onclick="showPage('profile')">Profile</button>
+  </div>
 
   <script src="app.js"></script>
 </body>
 </html>
+
 
