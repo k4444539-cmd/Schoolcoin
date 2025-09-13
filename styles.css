@@ -88,7 +88,7 @@ main {
   gap: 10px;
   justify-content: space-between;
   background: rgba(6, 18, 30, 0.88);
-  padding: 100px;
+  padding: 10px;
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(0, 200, 255, 0.15);
   z-index: 9999;
@@ -116,7 +116,7 @@ main {
 .footer-bar .nav-btn.active {
   background: linear-gradient(135deg, #00d4ff, #0088ff);
   color: #00121a;
-  box-shadow: 0 10px 30px rgba(0, 212, 255, 0.35);
+  box-shadow: 0 100px 300px rgba(0, 212, 255, 0.35);
   transform: translateY(-4px);
 }
 
@@ -126,4 +126,5 @@ main {
   box-shadow: 0 8px 26px rgba(0, 200, 255, 0.28);
   outline: none;
 }
+
 
