@@ -1,13 +1,19 @@
-// Ініціалізація Telegram WebApp
-const tg = window.Telegram.WebApp;
+document.addEventListener("DOMContentLoaded", () => {
+  let user = localStorage.getItem("user");
 
-// Тестовий баланс (поки без бази даних)
-let balance = 100;
+  if (!user) {
+    user = JSON.stringify({
+      name: "Гравець",
+      balance: 5
+    });
+    localStorage.setItem("user", user);
+  }
 
-document.getElementById("check").addEventListener("click", () => {
-  document.getElementById("balance").innerText = balance + " 🪙";
-  tg.HapticFeedback.impactOccurred("light"); // легка вібрація (тільки в мобільному Telegram)
+  const userData = JSON.parse(user);
+
+  // оновлюємо баланс, якщо є такий елемент
+  const balanceEl = document.getElementById("balance");
+  if (balanceEl) {
+    balanceEl.textContent = userData.balance;
+  }
 });
-
-// Автоматичне встановлення балансу при відкритті
-document.getElementById("balance").innerText = balance + " 🪙";
