@@ -79,29 +79,23 @@ main {
 /* ===== Нижня панель ===== */
 .footer-bar {
   position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: calc(100% - 32px);
-  max-width: 420px;
+  bottom: 0;               /* тепер прямо внизу */
+  left: 0;
+  width: 100%;             /* на всю ширину */
   display: flex;
-  gap: 10px;
-  justify-content: space-between;
-  background: rgba(6, 18, 30, 0.88);
-  padding: 10px;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 200, 255, 0.15);
+  justify-content: space-around;
+  background: rgba(6, 18, 30, 0.95);  /* щільний фон */
+  padding: 12px 8px;
+  border-top: 1px solid rgba(0, 200, 255, 0.25);
+  box-shadow: 0 -4px 20px rgba(0, 200, 255, 0.2);
   z-index: 9999;
   backdrop-filter: blur(6px);
 }
 
 .footer-bar .nav-btn {
-  appearance: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
   flex: 1;
-  padding: 10px 12px;
+  margin: 0 6px;
+  padding: 10px 0;
   background: linear-gradient(135deg, #003566, #00bfff);
   color: white;
   border: none;
@@ -116,15 +110,11 @@ main {
 .footer-bar .nav-btn.active {
   background: linear-gradient(135deg, #00d4ff, #0088ff);
   color: #00121a;
-  box-shadow: 0 100px 300px rgba(0, 212, 255, 0.35);
-  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0, 212, 255, 0.35);
+  transform: translateY(-3px);
 }
 
-.footer-bar .nav-btn:hover,
-.footer-bar .nav-btn:focus {
+.footer-bar .nav-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 26px rgba(0, 200, 255, 0.28);
-  outline: none;
 }
-
-
