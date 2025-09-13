@@ -85,7 +85,7 @@ main {
   display: flex;
   justify-content: space-around;
   background: rgba(6, 18, 30, 0.95);  
-  padding: 40px 22px 40px;   /* додаємо більше відступу знизу */
+  padding: 40px 22px 48px;   /* додаємо більше відступу знизу */
   border-top: 1px solid rgba(0, 200, 255, 0.25);
   box-shadow: 0 -4px 20px rgba(0, 200, 255, 0.2);
   z-index: 9999;
@@ -119,5 +119,6 @@ main {
   transform: translateY(-2px);
   box-shadow: 0 8px 26px rgba(0, 200, 255, 0.28);
 }
+
 
 
