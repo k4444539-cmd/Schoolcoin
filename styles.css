@@ -3,7 +3,7 @@ body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
   background: linear-gradient(135deg, #0a0f1f, #00111f, #001a33);
-  background-attachment: red;
+  background-attachment: fixed;
   color: white;
   display: flex;
   flex-direction: column;
@@ -129,4 +129,5 @@ footer button.active {
   background: #00d4ff;
   color: black;
 }
+
 
