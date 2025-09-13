@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: "Segoe UI", sans-serif;
-  background: #f4f6fa;
+  background: #f4f9ff;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -12,8 +12,9 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 15px 20px;
-  background: white;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: #003d66;
+  color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   border-radius: 0 0 15px 15px;
 }
 
@@ -26,10 +27,11 @@ body {
 .balance {
   display: flex;
   align-items: center;
-  background: #eef3ff;
+  background: #005c99;
   padding: 5px 12px;
   border-radius: 12px;
   font-weight: bold;
+  color: white;
 }
 
 .coin-icon {
@@ -58,29 +60,31 @@ body {
   display: flex;
   justify-content: space-between;
   font-weight: 500;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 .footer {
   display: flex;
   justify-content: space-around;
   padding: 10px 0;
-  background: white;
+  background: #003d66;
   border-radius: 15px 15px 0 0;
-  box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
 }
 
-button {
-  border: none;
-  background: #0078ff;
+.nav-btn {
   color: white;
+  text-decoration: none;
   padding: 10px 20px;
-  border-radius: 10px;
-  font-size: 16px;
-  cursor: pointer;
+  border-radius: 12px;
+  background: #005c99;
+  transition: background 0.3s ease, transform 0.2s;
 }
 
-button:hover {
-  background: #005fcc;
+.nav-btn:hover {
+  background: #007acc;
+  transform: scale(1.05);
 }
 
+.nav-btn.active {
+  background: #0099ff;
+}
