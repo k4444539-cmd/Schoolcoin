@@ -1,123 +1,110 @@
+/* Загальний фон */
 body {
   margin: 0;
-  font-family: "Segoe UI", sans-serif;
-  background: linear-gradient(135deg, #000000, #0a0f1f, #001122);
-  background-size: 400% 400%;
-  animation: gradientBG 12s ease infinite;
+  font-family: 'Segoe UI', sans-serif;
+  background: radial-gradient(circle at top left, #0d1b2a, #000814);
   color: white;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  justify-content: space-between;
 }
 
-@keyframes gradientBG {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* Верхня панель */
-.header {
+/* Хедер */
+header {
+  background: rgba(13, 27, 42, 0.9);
+  padding: 15px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 20px;
-  background: rgba(0, 20, 40, 0.9);
-  backdrop-filter: blur(8px);
-  box-shadow: 0 0 15px rgba(0, 180, 255, 0.6);
-  border-radius: 0 0 20px 20px;
+  box-shadow: 0 4px 15px rgba(0, 200, 255, 0.3);
+  border-bottom: 1px solid rgba(0, 200, 255, 0.4);
 }
 
-.avatar img {
-  width: 42px;
-  height: 42px;
+header img {
   border-radius: 50%;
-  border: 2px solid #00c3ff;
-  box-shadow: 0 0 15px rgba(0,195,255,0.6);
+  width: 35px;
+  height: 35px;
 }
 
+/* Баланс */
 .balance {
   display: flex;
   align-items: center;
-  background: rgba(0, 40, 70, 0.9);
+  background: linear-gradient(135deg, #001d3d, #003566);
   padding: 8px 14px;
-  border-radius: 14px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 200, 255, 0.5);
   font-weight: bold;
-  color: #00d9ff;
-  box-shadow: 0 0 12px rgba(0, 195, 255, 0.7);
 }
 
-.coin-icon {
-  width: 22px;
-  margin-right: 6px;
-}
-
-/* Основний блок */
-.content {
+/* Головний контейнер */
+main {
   flex: 1;
-  padding: 25px;
-  text-align: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.content h1 {
-  color: #00d9ff;
-  text-shadow: 0 0 12px rgba(0, 217, 255, 0.8);
-}
-
+/* Топ 10 */
 .leaderboard {
-  list-style: none;
-  padding: 0;
-  margin: 20px auto;
-  max-width: 380px;
+  background: rgba(13, 27, 42, 0.85);
+  border-radius: 20px;
+  padding: 20px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 8px 25px rgba(0, 200, 255, 0.3);
 }
 
-.leaderboard li {
-  background: rgba(5, 20, 40, 0.9);
-  margin: 10px 0;
-  padding: 14px 20px;
-  border-radius: 14px;
+.leaderboard h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #00d4ff;
+  text-shadow: 0 0 10px rgba(0, 200, 255, 0.8);
+}
+
+.player {
   display: flex;
   justify-content: space-between;
-  font-weight: 500;
-  color: #e0f7ff;
-  box-shadow: 0 0 15px rgba(0, 180, 255, 0.5);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  padding: 12px 15px;
+  background: rgba(0, 53, 102, 0.6);
+  border-radius: 12px;
+  margin-bottom: 10px;
+  transition: all 0.3s ease;
 }
 
-.leaderboard li:hover {
+.player:hover {
+  background: rgba(0, 200, 255, 0.3);
   transform: scale(1.03);
-  box-shadow: 0 0 20px rgba(0, 217, 255, 0.9);
 }
 
-/* Нижня навігація */
-.footer {
+/* Нижнє меню */
+footer {
   display: flex;
   justify-content: space-around;
+  background: rgba(13, 27, 42, 0.95);
   padding: 12px 0;
-  background: rgba(0, 20, 40, 0.95);
-  border-radius: 20px 20px 0 0;
-  box-shadow: 0 -2px 15px rgba(0, 180, 255, 0.6);
+  border-top: 1px solid rgba(0, 200, 255, 0.4);
+  box-shadow: 0 -4px 15px rgba(0, 200, 255, 0.2);
 }
 
-.nav-btn {
-  color: #00d9ff;
-  text-decoration: none;
-  padding: 10px 22px;
-  border-radius: 14px;
-  background: rgba(0, 60, 100, 0.8);
-  transition: background 0.3s ease, transform 0.2s, box-shadow 0.3s ease;
-  box-shadow: 0 0 10px rgba(0, 217, 255, 0.6);
+footer button {
+  flex: 1;
+  margin: 0 8px;
+  background: linear-gradient(135deg, #003566, #00d4ff);
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 0 15px rgba(0, 200, 255, 0.5);
 }
 
-.nav-btn:hover {
-  background: #00d9ff;
-  color: #001020;
-  transform: scale(1.08);
-  box-shadow: 0 0 18px rgba(0, 217, 255, 1);
-}
-
-.nav-btn.active {
-  background: #00d9ff;
-  color: #000;
-  box-shadow: 0 0 20px rgba(0, 217, 255, 1);
+footer button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 20px rgba(0, 200, 255, 0.8);
 }
