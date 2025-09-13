@@ -1,74 +1,90 @@
-/* Загальний фон */
+/* Фон */
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: radial-gradient(circle at top left, #0d1b2a, #000814);
+  background: linear-gradient(135deg, #0a0f1f, #00111f, #001a33);
+  background-attachment: fixed;
   color: white;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  min-height: 100vh;
 }
 
-/* Хедер */
+/* Верхня панель */
 header {
-  background: rgba(13, 27, 42, 0.9);
-  padding: 15px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 4px 15px rgba(0, 200, 255, 0.3);
-  border-bottom: 1px solid rgba(0, 200, 255, 0.4);
+  padding: 15px 20px;
+  background: rgba(0, 0, 20, 0.8);
+  border-bottom: 1px solid rgba(0, 200, 255, 0.5);
+  box-shadow: 0 4px 20px rgba(0, 200, 255, 0.3);
 }
 
-header img {
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  width: 35px;
-  height: 35px;
+  border: 2px solid #00d4ff;
+}
+
+.username {
+  font-size: 16px;
+  font-weight: bold;
 }
 
 /* Баланс */
 .balance {
   display: flex;
   align-items: center;
-  background: linear-gradient(135deg, #001d3d, #003566);
+  background: linear-gradient(135deg, #002233, #004466);
   padding: 8px 14px;
   border-radius: 12px;
-  box-shadow: 0 0 15px rgba(0, 200, 255, 0.5);
+  box-shadow: 0 0 15px rgba(0, 200, 255, 0.6);
   font-weight: bold;
 }
 
-/* Головний контейнер */
-main {
-  flex: 1;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.coin-icon {
+  width: 20px;
+  margin-right: 8px;
 }
 
-/* Топ 10 */
+/* Головний блок */
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+}
+
 .leaderboard {
-  background: rgba(13, 27, 42, 0.85);
+  background: rgba(0, 15, 30, 0.85);
   border-radius: 20px;
   padding: 20px;
   width: 90%;
   max-width: 500px;
-  box-shadow: 0 8px 25px rgba(0, 200, 255, 0.3);
+  box-shadow: 0 0 25px rgba(0, 200, 255, 0.4);
 }
 
 .leaderboard h2 {
   text-align: center;
   margin-bottom: 20px;
   color: #00d4ff;
-  text-shadow: 0 0 10px rgba(0, 200, 255, 0.8);
+  text-shadow: 0 0 15px rgba(0, 200, 255, 0.9);
 }
 
 .player {
   display: flex;
   justify-content: space-between;
   padding: 12px 15px;
-  background: rgba(0, 53, 102, 0.6);
+  background: rgba(0, 53, 102, 0.4);
   border-radius: 12px;
   margin-bottom: 10px;
   transition: all 0.3s ease;
@@ -83,10 +99,10 @@ main {
 footer {
   display: flex;
   justify-content: space-around;
-  background: rgba(13, 27, 42, 0.95);
+  background: rgba(0, 0, 20, 0.9);
   padding: 12px 0;
-  border-top: 1px solid rgba(0, 200, 255, 0.4);
-  box-shadow: 0 -4px 15px rgba(0, 200, 255, 0.2);
+  border-top: 1px solid rgba(0, 200, 255, 0.5);
+  box-shadow: 0 -4px 20px rgba(0, 200, 255, 0.3);
 }
 
 footer button {
@@ -101,10 +117,15 @@ footer button {
   padding: 10px;
   cursor: pointer;
   transition: 0.3s;
-  box-shadow: 0 0 15px rgba(0, 200, 255, 0.5);
+  box-shadow: 0 0 15px rgba(0, 200, 255, 0.6);
 }
 
 footer button:hover {
   transform: translateY(-3px);
-  box-shadow: 0 0 20px rgba(0, 200, 255, 0.8);
+  box-shadow: 0 0 20px rgba(0, 200, 255, 0.9);
+}
+
+footer button.active {
+  background: #00d4ff;
+  color: black;
 }
