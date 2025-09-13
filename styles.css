@@ -1,4 +1,4 @@
-/* Фон */
+/* ===== Фон ===== */
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
@@ -10,7 +10,7 @@ body {
   min-height: 100vh;
 }
 
-/* Верхня панель */
+/* ===== Верхня панель ===== */
 header {
   display: flex;
   justify-content: space-between;
@@ -39,7 +39,7 @@ header {
   font-weight: bold;
 }
 
-/* Баланс */
+/* ===== Баланс ===== */
 .balance {
   display: flex;
   align-items: center;
@@ -55,7 +55,7 @@ header {
   margin-right: 8px;
 }
 
-/* Головний блок */
+/* ===== Головний блок ===== */
 main {
   flex: 1;
   display: flex;
@@ -95,39 +95,44 @@ main {
   transform: scale(1.03);
 }
 
-/* Нижнє меню */
+/* ===== Нижнє меню ===== */
 footer {
+  position: fixed;
+  bottom: 20px; /* 🔹 підняв вище, щоб не було низько на телефоні */
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   justify-content: space-around;
+  width: 90%;
+  max-width: 400px;
   background: rgba(0, 0, 20, 0.9);
-  padding: 12px 0;
-  border-top: 1px solid rgba(0, 200, 255, 0.5);
+  border-radius: 20px;
   box-shadow: 0 -4px 20px rgba(0, 200, 255, 0.3);
+  padding: 10px 0;
 }
 
+/* Кнопки */
 footer button {
-  flex: 1;
-  margin: 0 8px;
-  background: linear-gradient(135deg, #003566, #00d4ff);
+  background: transparent;
   border: none;
-  border-radius: 12px;
-  color: white;
+  color: #bbb;
   font-size: 14px;
   font-weight: bold;
+  flex: 1;
   padding: 10px;
   cursor: pointer;
-  transition: 0.3s;
-  box-shadow: 0 0 15px rgba(0, 200, 255, 0.6);
+  transition: all 0.3s ease;
+  border-radius: 12px;
 }
 
+/* Ховер */
 footer button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 0 20px rgba(0, 200, 255, 0.9);
+  color: white;
+  background: rgba(0, 200, 255, 0.15);
 }
 
+/* Активна */
 footer button.active {
-  background: #00d4ff;
-  color: black;
+  color: #00d4ff;
+  background: rgba(0, 200, 255, 0.25);
 }
-
-
