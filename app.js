@@ -20,15 +20,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ===== 3. Перемикання сторінок =====
   window.showPage = function (page, btn) {
-    // Знімаємо активний клас з усіх кнопок
+    // Прибираємо active з усіх кнопок
     document.querySelectorAll("footer button").forEach((b) =>
       b.classList.remove("active")
     );
 
-    // Додаємо активний клас натиснутій кнопці
+    // Додаємо active натиснутій
     btn.classList.add("active");
 
-    // Змінюємо контент
+    // Контент
     const content = document.querySelector("main");
     if (page === "home") {
       content.innerHTML = `
