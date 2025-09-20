@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let user = localStorage.getItem("user");
 
   if (!user) {
-    registration.classList.add("active");
+    registration.style.display = "flex";
   } else {
     showMainScreen(JSON.parse(user));
   }
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   function showMainScreen(userData) {
-    registration.classList.remove("active");
+    registration.style.display = "none";
     balanceEl.textContent = userData.balance;
     showPage("home", document.querySelector("footer button.active"));
   }
