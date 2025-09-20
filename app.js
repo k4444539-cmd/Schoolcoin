@@ -1,42 +1,58 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // ===== 1. Створення / зчитування користувача =====
+  const registration = document.getElementById("registration");
+  const registerBtn = document.getElementById("registerBtn");
+  const fullnameInput = document.getElementById("fullname");
+  const codeInput = document.getElementById("code");
+  const content = document.getElementById("content");
+  const balanceEl = document.getElementById("balance");
+
   let user = localStorage.getItem("user");
 
   if (!user) {
-    user = JSON.stringify({
-      name: "Player",
-      balance: 5
-    });
-    localStorage.setItem("user", user);
+    registration.classList.add("active");
+  } else {
+    showMainScreen(JSON.parse(user));
   }
 
-  const userData = JSON.parse(user);
+  registerBtn.addEventListener("click", () => {
+    const fullname = fullnameInput.value.trim();
+    const code = codeInput.value.trim();
 
-  // ===== 2. Відображення балансу =====
-  const balanceEl = document.getElementById("balance");
-  if (balanceEl) {
+    if (fullname && code) {
+      const userData = {
+        name: fullname,
+        code: code,
+        balance: 5
+      };
+      localStorage.setItem("user", JSON.stringify(userData));
+      showMainScreen(userData);
+    } else {
+      alert("Заповніть всі поля!");
+    }
+  });
+
+  function showMainScreen(userData) {
+    registration.classList.remove("active");
     balanceEl.textContent = userData.balance;
+    showPage("home", document.querySelector("footer button.active"));
   }
 
-  // ===== 3. Перемикання сторінок =====
+  // ===== Перемикання сторінок =====
   window.showPage = function (page, btn) {
-    // Прибираємо active з усіх кнопок
     document.querySelectorAll("footer button").forEach((b) =>
       b.classList.remove("active")
     );
-
-    // Додаємо active натиснутій
     btn.classList.add("active");
 
-    // Контент
-    const content = document.querySelector("main");
+    const userData = JSON.parse(localStorage.getItem("user"));
+
     if (page === "home") {
       content.innerHTML = `
         <div class="leaderboard">
-          <h2>Top 10 Players</h2>
-          <div class="player"><span>${userData.name}</span><span>${userData.balance} coins</span></div>
-          <div class="player"><span>Student #2</span><span>4 coins</span></div>
-          <div class="player"><span>Student #3</span><span>3 coins</span></div>
+          <h2>Топ 10 гравців</h2>
+          <div class="player"><span>1. ${userData.name}</span><span>${userData.balance} SC</span></div>
+          <div class="player"><span>2. Оля</span><span>120 SC</span></div>
+          <div class="player"><span>3. Макс</span><span>110 SC</span></div>
         </div>
       `;
     } else if (page === "cases") {
@@ -49,14 +65,11 @@ document.addEventListener("DOMContentLoaded", () => {
     } else if (page === "profile") {
       content.innerHTML = `
         <div class="leaderboard">
-          <h2>Profile</h2>
-          <p>Name: ${userData.name}</p>
-          <p>Balance: ${userData.balance} coins</p>
+          <h2>Профіль</h2>
+          <p>Ім'я: ${userData.name}</p>
+          <p>Баланс: ${userData.balance} SC</p>
         </div>
       `;
     }
   };
-
-  // ===== 4. Стартова сторінка =====
-  showPage("home", document.querySelector("footer button"));
 });
