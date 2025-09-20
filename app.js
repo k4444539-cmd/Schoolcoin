@@ -29,7 +29,28 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       alert("Заповніть всі поля!");
     }
+    
   });
+  registerBtn.addEventListener("click", () => {
+  const fullname = fullnameInput.value.trim();
+  const code = codeInput.value.trim();
+
+  if (fullname && code) {
+    const userData = {
+      name: fullname,
+      code: code,
+      balance: 5
+    };
+    localStorage.setItem("user", JSON.stringify(userData));
+
+    // 🔥 Приховати popup
+    registration.style.display = "none";
+
+    showMainScreen(userData);
+  } else {
+    alert("Заповніть всі поля!");
+  }
+});
 
   function showMainScreen(userData) {
     registration.style.display = "none";
@@ -73,3 +94,4 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 });
+
