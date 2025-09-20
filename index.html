@@ -14,30 +14,31 @@
     </div>
     <div class="balance">
       <img src="coin.png" alt="Coin" class="coin-icon">
-      <span id="balance">5</span> SC
+      <span id="balance">0</span> SC
     </div>
   </header>
   
+  <!-- Форма реєстрації -->
+  <div id="registration" class="registration">
+    <h2>Реєстрація</h2>
+    <input type="text" id="fullname" placeholder="Введіть ім'я та прізвище">
+    <input type="text" id="code" placeholder="Введіть код">
+    <button id="registerBtn">Готово</button>
+  </div>
+
   <!-- Основний блок -->
-  <main class="content">
-    <h1>Топ 10 гравців</h1>
-    <ul class="leaderboard" id="leaderboard">
-      <li><span>1. Андрій</span> <span>150 SC</span></li>
-      <li><span>2. Оля</span> <span>120 SC</span></li>
-      <li><span>3. Макс</span> <span>110 SC</span></li>
-    </ul>
+  <main id="content" class="content">
+    <!-- Тут буде мінятися контент -->
   </main>
 
- <!-- Нижня панель -->
-<footer class="footer-bar">
-   <button class="nav-btn" onclick="showPage('cases', this)">Cases</button>
-   <button class="nav-btn active" onclick="showPage('home', this)">Home</button>
-   <button class="nav-btn" onclick="showPage('profile', this)">Profile</button>
-</footer>
+  <!-- Нижня панель -->
+  <footer class="footer-bar">
+    <button class="nav-btn" onclick="showPage('cases', this)">Cases</button>
+    <button class="nav-btn active" onclick="showPage('home', this)">Home</button>
+    <button class="nav-btn" onclick="showPage('profile', this)">Profile</button>
+  </footer>
 
-
+  <!-- Підключення JS -->
   <script src="app.js"></script>
 </body>
 </html>
-
-
