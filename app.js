@@ -8,12 +8,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let user = localStorage.getItem("user");
 
+  // Якщо користувача ще нема → показуємо форму
   if (!user) {
     registration.style.display = "flex";
   } else {
     showMainScreen(JSON.parse(user));
   }
 
+  // Обробка кнопки "Готово"
   registerBtn.addEventListener("click", () => {
     const fullname = fullnameInput.value.trim();
     const code = codeInput.value.trim();
@@ -24,36 +26,20 @@ document.addEventListener("DOMContentLoaded", () => {
         code: code,
         balance: 5
       };
+
+      // Зберігаємо в localStorage
       localStorage.setItem("user", JSON.stringify(userData));
+
+      // Ховаємо popup і запускаємо головний екран
+      registration.style.display = "none";
       showMainScreen(userData);
     } else {
       alert("Заповніть всі поля!");
     }
-    
   });
-  registerBtn.addEventListener("click", () => {
-  const fullname = fullnameInput.value.trim();
-  const code = codeInput.value.trim();
 
-  if (fullname && code) {
-    const userData = {
-      name: fullname,
-      code: code,
-      balance: 5
-    };
-    localStorage.setItem("user", JSON.stringify(userData));
-
-    // 🔥 Приховати popup
-    registration.style.display = "none";
-
-    showMainScreen(userData);
-  } else {
-    alert("Заповніть всі поля!");
-  }
-});
-
+  // ===== Функція показу головного екрану =====
   function showMainScreen(userData) {
-    registration.style.display = "none";
     balanceEl.textContent = userData.balance;
     showPage("home", document.querySelector("footer button.active"));
   }
@@ -94,4 +80,3 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 });
-
